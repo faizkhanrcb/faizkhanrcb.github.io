@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+next →← prev
+JavaScript Form
+In this tutorial, we will learn, discuss, and understand the JavaScript form. We will also see the implementation of the JavaScript form for different purposes.
+
+Here, we will learn the method to access the form, getting elements as the JavaScript form's value, and submitting the form.
+
+Introduction to Forms
+Forms are the basics of HTML. We use HTML form element in order to create the JavaScript form. For creating a form, we can use the following sample code:
+
+
+<html>  
+<head>  
+<title> Login Form</title>  
+</head>  
+<body>  
+<h3> LOGIN </h3>  
+<formform ="Login_form" onsubmit="submit_form()">  
+<h4> USERNAME</h4>  
+<input type="text" placeholder="Enter your email id"/>  
+<h4> PASSWORD</h4>  
+<input type="password" placeholder="Enter your password"/></br></br>  
+<input type="submit" value="Login"/>  
+<input type="button" value="SignUp" onClick="create()"/>  
+</form>  
+</html>  
+
+</body>
+</html>
+
+<html>  
+<head>  
+<title> Login Form</title>  
+</head>  
+<body>  
+<h3> LOGIN </h3>  
+<formform ="Login_form" onsubmit="submit_form()">  
+<h4> USERNAME</h4>  
+<input type="text" placeholder="Enter your email id"/>  
+<h4> PASSWORD</h4>  
+<input type="password" placeholder="Enter your password"/></br></br>  
+<input type="submit" value="Login"/>  
+<input type="button" value="SignUp" onClick="create()"/>  
+</form>  
+<script type="text/javascript">  
+function submit_form(){  
+alert("Login successfully");  
+}  
+function create(){  
+window.location="signup.html";  
+}  
+</script>  
+</body>  
+</html>  
+
+
+
+
+<html>  
+<head>  
+<title> SignUp Page</title>  
+</head>  
+<body align="center" >  
+<h1> CREATE YOUR ACCOUNT</h1>  
+<table cellspacing="2" align="center" cellpadding="8" border="0">  
+<tr><td> Name</td>   
+<td><input type="text" placeholder="Enter your name" id="n1"></td></tr>  
+<tr><td>Email </td>  
+<td><input type="text" placeholder="Enter your email id" id="e1"></td></tr>  
+<tr><td> Set Password</td>  
+<td><input type="password" placeholder="Set a password" id="p1"></td></tr>  
+<tr><td>Confirm Password</td>  
+<td><input type="password" placeholder="Confirm your password" id="p2"></td></tr>  
+<tr><td>  
+<input type="submit" value="Create" onClick="create_account()"/>  
+</table>  
+<script type="text/javascript">  
+function create_account(){  
+var n=document.getElementById("n1").value;  
+var e=document.getElementById("e1").value;  
+var p=document.getElementById("p1").value;  
+var cp=document.getElementById("p2").value;  
+//Code for password validation  
+        var letters = /^[A-Za-z]+$/;  
+        var email_val = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;  
+//other validations required code  
+if(n==''||e==''||p==''||cp==''){  
+alert("Enter each details correctly");  
+}  
+else if(!letters.test(n))  
+        {  
+            alert('Name is incorrect must contain alphabets only');  
+        }  
+else if (!email_val.test(e))  
+        {  
+            alert('Invalid email format please enter valid email id');  
+        }  
+else if(p!=cp)  
+{  
+alert("Passwords not matching");  
+}  
+else if(document.getElementById("p1").value.length > 12)  
+{  
+alert("Password maximum length is 12");  
+}  
+else if(document.getElementById("p1").value.length < 6)  
+{  
+alert("Password minimum length is 6");  
+}  
+else{  
+alert("Your account has been created successfully... Redirecting to JavaTpoint.com");  
+window.location="https://www.javatpoint.com/";  
+}  
+}  
+</script>  
+</body>  
+</html>  
